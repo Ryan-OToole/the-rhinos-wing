@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
 
     byebug
 
-
     if (@user && !!@user.authenticate(params["password"]))
       render json: {
         username: @user.username,
