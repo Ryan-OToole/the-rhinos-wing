@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    # before_action :set_post, only: [:show,:update,:destroy]
+    before_action :set_post, only: [:show,:update,:destroy]
 
   def index
     posts = Post.all
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create(post_params)
-    render json: poem, status: 201
+    render json: post, status: 201
   end
 
   def update
@@ -29,11 +29,11 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.permit(:body, :title)
+      params.permit(:user_id, :title, :body)
     end
 
-    # def set_post
-    #   @post = Post.find(params[:id])
-    # end
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
 end

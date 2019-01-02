@@ -30,9 +30,9 @@ class UsersController < ApplicationController
   end
 
 
-  def user_poems
+  def user_posts
     @user = User.find(params[:user_id])
-    render json: @user.poems
+    render json: @user.posts
   end
 
 end
