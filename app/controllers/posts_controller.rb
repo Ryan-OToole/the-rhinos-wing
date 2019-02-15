@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.permit(:user_id, :title, :body)
+      params.permit(:user_id, :title, :body, :rhino)
     end
 
     def set_post
